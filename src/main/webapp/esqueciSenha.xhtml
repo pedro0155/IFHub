@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+    <h:head>
+        <title>IFHub Login</title>
+        <h:outputStylesheet name="estilos.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+                        <div style="background-color: #cccccc">
+
+                <p:commandButton icon="pi pi-angle-left" styleClass="ui-button-flat" action="index" process="@this"/>
+              <!--   <p:commandButton value="recarregar" update="@form" /> -->
+
+            </div>
+            
+            <fieldset class="mt-2 center w-75">
+                <div class="mt-2 center w-50 t-center">
+                    <h2>Insira o usuário ou Email cadastrado.</h2>
+                    <h2>Será enviado um código para confirmação no email cadastrado.</h2>
+                    
+                </div>
+                
+                <div class="ui-g center w-50 mt-2">
+                    <p:outputLabel value="Login ou Email Cadastrado"/>
+                    <p:inputText placeholder="Login ou Email" class="center w-full" value=""/>
+                    <p:inputText placeholder="código recebido" class="center w-75" value=""/>
+                    <p:commandButton action=" " value="Enviar" class="center w-25" update="@form"/>
+                    
+                    
+                </div>
+                
+                <div class="center w-50 mt-2">
+                    
+                    <p:outputLabel value="Nova Senha:" />
+                    <p:inputText class="center w-full" value="" placeholder="Nova Senha" disabled="true"/>
+                    
+                </div>
+                
+                
+            </fieldset>
+            
+        </h:form>
+
+    </h:body>
+</html>
