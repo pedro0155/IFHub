@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+    <h:head>
+        <title>IFHub Cadastro</title>
+        <h:outputStylesheet name="estilos.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div style="background-color: #cccccc">
+
+                <p:commandButton icon="pi pi-angle-left" styleClass="ui-button-flat" action="index" process="@this"/>
+                <!--  <p:commandButton value="recarregar" update="@form"/> -->
+
+            </div>
+
+            <p:fieldset class="w-50 center mt-2">
+                <div>
+                    <p:outputLabel value="* Nome:" />
+                    <p:inputText id="nomeCadastro" placeholder="Nome" class="w-full" required="true"/>
+                    <p:tooltip for="nomeCadastro" position="right" value="Digite seu nome"/>
+                    <p:outputLabel value="* Nome Usuário:" />
+                    <p:inputText id="usuarioCadastro" placeholder="Usuário" class="w-full" required="true"/>
+                    <p:tooltip for="usuarioCadastro" position="right" value="Digite nome de usuário"/>
+                    <p:outputLabel value="* Email:" />
+                    <p:inputText id="emailCadastro" placeholder="Email" class="w-full" required="true"/>
+                    <p:tooltip for="emailCadastro" position="right" value="Digite nome de usuário"/>
+                    <p:outputLabel value="* Senha:" />
+                    <p:password id="senha" placeholder="Insira sua senha" class="w-full" required="true"/>
+                    <p:tooltip for="senha" position="right" value="Digite sua senha"/>
+
+                    <div class="center mt-2 w-full">
+
+                        <p:selectBooleanCheckbox value="null" itemLabel="I agree to the Terms of Use and Privacy Policy."/>
+
+                    </div>
+                    <div class="ui-g center mt-2">
+
+                        <p:commandButton action="index" update="@form" value="Cadastrar" class="center"/>
+
+                    </div>
+
+                    <p:fieldset class="center mt-2 w-75">
+
+                        <div class="t-center">
+                            <p:outputLabel value="Cadastre Usando"/>
+                        </div>
+                        <div class="ui-g center ">
+                            <p:commandButton action="null" update="@form" value="Facebook" styleClass="ui-button-sucess center" icon="pi pi-facebook"/>
+                            <p:commandButton action="null" update="@form" value="Google" styleClass="ui-button-sucess center" icon="pi pi-google"/>
+                        </div>
+
+                    </p:fieldset>
+
+                </div>
+
+            </p:fieldset>
+
+        </h:form>
+    </h:body>
+</html>

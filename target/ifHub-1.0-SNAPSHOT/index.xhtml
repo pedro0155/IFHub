@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+    <h:head>
+        <title>IFHub Login</title>
+        <h:outputStylesheet name="estilos.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h:form >
+            <div style="background-color: #cccccc">
+                
+                <p:commandButton action="paginaPrincipal" value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
+                
+            </div> 
+            <p:fieldset legend="Login" class="center w-75 mt-2">
+                <div class="w-50 center">
+                    <p:outputLabel value="Usuário ou Email"/>
+                    <p:inputText value="#{ctl.cpLogin}" id="login" type="text" placeholder="Digite seu usuário ou email" class="w-full" />
+                    <p:tooltip for="login" value="Digite seu Usuário ou Email" position="right" />
+                </div>
+                <div class="w-50 center mt-2"> 
+                    <p:outputLabel value="Senha"/>
+                    <p:password value="#{ctl.cpSenha}" id="senha" placeholder="Digite sua Senha" class="w-full"/>
+                    <p:tooltip for="senha" value="Digite sua Senha" position="right"/>
+                </div>
+                <div class="grid-g t-center mt-2">
+                    <p:outputLabel value="#{ctl.lbSenha}" class=" cor-vm bold"/>
+                </div>
+                
+                <div class="center w-50 t-right">
+                    <p:commandLink value="Esqueci minha Senha" action="esqueciSenha" update="@form"/>
+                </div>
+                <div class="ui-g w-50 center mt-2">
+                  <!--  <p:commandButton action="null" update="@form" value="Voltar" styleClass="ui-button-warning center"/> -->
+                  <p:commandButton action="#{ctl.btEntrar(ae)}" update="@form" value="Logar" styleClass="ui-button-sucess center"/>
+                </div>
+
+                <div>
+                    <p:fieldset class="center w-50 mt-2">
+                        <div class="t-center">
+                            <p:outputLabel value="Entre Usando"/>
+                        </div>
+                        <div class="ui-g center ">
+                            <p:commandButton action="null" update="@form" value="Facebook" styleClass="ui-button-sucess center" icon="pi pi-facebook"/>
+                            <p:commandButton action="null" update="@form" value="Google" styleClass="ui-button-sucess center" icon="pi pi-google"/>
+                        </div>
+                    </p:fieldset>
+                </div>
+                
+                 <div class="t-right">
+                     <p:commandLink value="Não tenho uma conta" action="cadastroConta" update="@form"/>
+                </div>
+                
+                
+
+            </p:fieldset>
+        </h:form>
+    </h:body>
+</html>
