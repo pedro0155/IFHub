@@ -14,16 +14,18 @@
                 <p:commandButton value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
 
             </div> 
-            <p:fieldset>
-                <div class="ui-g">
+            <p:fieldset class="borda">
+                <h:panelGroup>
+                <div class="ui-g cabeca">
 
-                    <div class="ui-g-12 ui-lg-2 center">
-                        <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="center icon-button" />
+                    
+                        <div class="ui-g-12 ui-lg-1">
+                        <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center" />
 
                         <p:overlayPanel for="menu" style="width:350px">
                             <div>
                                 <p:fieldset>
-                            <p:commandLink value="Início" action="null"/>
+                                    <p:commandLink value="Início" action="paginaPrincipal" update="@form"/>
                             </p:fieldset>
                                 <p:fieldset>
                             <p:commandLink value="Area do Aluno" action="null"/>
@@ -37,32 +39,35 @@
                             </div>
                             
                         </p:overlayPanel>
-                    </div>
+                        </div>
+                        <div class="ui-g-12 ui-lg-7">
+                            <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
+                        </div>
+                   
 
-                    <div class="ui-g-12 ui-lg-1"/> <!-- separar botão de entrar -->
-                    <div class="ui-g-12 ui-lg-6">
 
-                    </div>
-                    <div class="ui-g-12 ui-lg-1"/> <!-- separar botão de entrar -->
-
-                    <div class="ui-g-12 ui-lg-2">
-                        <p:commandButton value="Entrar / Registrar" class="w-75" update="@form"/>
-
-                        <div class="ui-g-12 ui-lg-1"/> <!-- separar botão  -->
-
-                        <p:commandButton type="button" icon="pi pi-user" styleClass="rounded-button ui-button-info " />
+                    <div class="ui-g-12 ui-lg-4">
+                        <p:commandButton value="Entrar / Registrar" class="w-50 mr-2 center" update="@form"/>
+                        <p:commandButton type="button" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
                     </div>
 
                 </div>
-                <div class="h-25">
-                    <div class="ui-g ui-lg-8 center mt-2 ">
-                        <p:outputLabel value="IFHub é um repositório digital que organiza e compartilha projetos de pesquisa e extensão do IFMT - Campus Rondonópolis." style="font-weight: bold" class="mt-2 center"/>
-                        <p:outputLabel value="Facilita o acesso, colaboração e busca por artefatos, garantindo integridade dos dados. " style="font-weight: bold" class="center"/>
-                        <p:outputLabel value="A plataforma melhora a produtividade e
-                                       padroniza processos, contribuindo para o sucesso dos projetos." style="font-weight: bold" class="center"/>
+                </h:panelGroup> <!-- Cabeçalho -->
+               
+                <h:panelGroup>
+                <div class="h-20">
+                    <div class="ui-g ui-lg-8 center mt-5 borda">
+                        <h:outputText value="IFHub é um repositório digital que organiza e compartilha projetos de pesquisa e extensão do IFMT - Campus Rondonópolis." class="bold t-center w-full"/>
+                        
+                        <h:outputText  value="Facilita o acesso, colaboração e busca por artefatos, garantindo integridade dos dados. "  class="bold t-center w-full mt-2"/>
+                       
+                        <h:outputText  value="A plataforma melhora a produtividade e padroniza processos, contribuindo para o sucesso dos projetos."  class="bold t-center w-full mt-2"/>
                     </div>
                 </div >
-                    <div class="ui-g center">
+                </h:panelGroup> <!-- descrição -->
+                    
+                
+                <div class="ui-g center">
                         <div class="ui-g-12 ui-lg-6 center">
                         <span class="ui-input-icon-left w-full">
                             <i class="pi pi-search" />
@@ -72,7 +77,7 @@
                     </div>
 
             </p:fieldset>
-            <p:fieldset>
+            <p:fieldset class="borda">
                 <p:outputLabel value="Ultimos projetos aprovados" class="bold"/>
                 <div class="card">
                     <p:carousel value="" var="projeto" numVisible="3" numScroll="3">
@@ -97,7 +102,7 @@
                 </div>
 
             </p:fieldset>
-            <p:fieldset>
+            <p:fieldset class="borda">
                 <p:outputLabel value="Projetos" class="bold"/>
                 <div class="card">
                     <p:carousel value="" var="projeto" numVisible="3" numScroll="3">
