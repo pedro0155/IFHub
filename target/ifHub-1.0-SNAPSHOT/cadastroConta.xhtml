@@ -16,33 +16,62 @@
 
             </div>
 
-            <p:fieldset class="w-50 center mt-2">
+            <p:fieldset class="w-50 center mt-2 borda">
+                <div class="ui-g">
+                    <div class='ui-g-12 ui-lg-4 t-right'>
+                        <p:outputLabel value="* Nome:" class='t-right'/>
+
+                    </div>
+                    <div class='ui-lg-6'>
+                        <p:inputText id="nomeCadastro" placeholder="Nome" class="w-full" required="true"/>
+                        <p:tooltip for="nomeCadastro" position="right" value="Digite seu nome"/>
+
+                    </div>
+                    <div class='ui-g-12 ui-lg-4 t-right'>
+
+                        <p:outputLabel value="* Nome Usuário:" class='t-right'/>
+
+                    </div>
+                    <div class='ui-lg-6'>
+
+                        <p:inputText id="usuarioCadastro" placeholder="Usuário" class="w-full" required="true"/>
+                        <p:tooltip for="usuarioCadastro" position="right" value="Digite nome de usuário"/>
+
+                    </div>
+                    <div class='ui-g-12 ui-lg-4 t-right'>
+
+                        <p:outputLabel value="* Email:" class="t-right" />
+
+                    </div>
+                    <div class='ui-lg-6'>
+
+                        <p:inputText id="emailCadastro" placeholder="Email" class="w-full" required="true"/>
+                        <p:tooltip for="emailCadastro" position="right" value="Digite nome de usuário"/>
+
+                    </div>
+                    <div class='ui-g-12 ui-lg-4 t-right'>
+
+                        <p:outputLabel value="* Senha:" class='t-right' />
+                    </div>
+                    <div class='ui-lg-6'>
+
+                        <p:password id="senha" placeholder="Insira sua senha" class="w-full" required="true"/>
+                        <p:tooltip for="senha" position="right" value="Digite sua senha"/>
+                    </div>
+                </div>
+
+                <div class="ui-g center mt-2 w-full">
+
+                    <p:selectBooleanCheckbox value="null" itemLabel="I agree to the Terms of Use and Privacy Policy." class='center'/>
+
+                </div>
+                <div class="ui-g center mt-2">
+
+                    <p:commandButton action="index" update="@form" value="Cadastrar" class="center"/>
+
+                </div>
                 <div>
-                    <p:outputLabel value="* Nome:" />
-                    <p:inputText id="nomeCadastro" placeholder="Nome" class="w-full" required="true"/>
-                    <p:tooltip for="nomeCadastro" position="right" value="Digite seu nome"/>
-                    <p:outputLabel value="* Nome Usuário:" />
-                    <p:inputText id="usuarioCadastro" placeholder="Usuário" class="w-full" required="true"/>
-                    <p:tooltip for="usuarioCadastro" position="right" value="Digite nome de usuário"/>
-                    <p:outputLabel value="* Email:" />
-                    <p:inputText id="emailCadastro" placeholder="Email" class="w-full" required="true"/>
-                    <p:tooltip for="emailCadastro" position="right" value="Digite nome de usuário"/>
-                    <p:outputLabel value="* Senha:" />
-                    <p:password id="senha" placeholder="Insira sua senha" class="w-full" required="true"/>
-                    <p:tooltip for="senha" position="right" value="Digite sua senha"/>
-
-                    <div class="center mt-2 w-full">
-
-                        <p:selectBooleanCheckbox value="null" itemLabel="I agree to the Terms of Use and Privacy Policy."/>
-
-                    </div>
-                    <div class="ui-g center mt-2">
-
-                        <p:commandButton action="index" update="@form" value="Cadastrar" class="center"/>
-
-                    </div>
-
-                    <p:fieldset class="center mt-2 w-75">
+                    <p:fieldset class="center mt-2 w-75 borda ">
 
                         <div class="t-center">
                             <p:outputLabel value="Cadastre Usando"/>

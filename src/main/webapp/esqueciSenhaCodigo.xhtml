@@ -19,15 +19,15 @@
             <fieldset class="mt-2 center w-75 borda">
                 <div class='h-25'>
                 <div class="mt-5 center w-50 t-center">
-                    <h2>Insira o usuário ou Email cadastrado.</h2>
-                    <h2>Será enviado um código para confirmação no email cadastrado.</h2>
+                    <h2>Insira o codigo de 8 digitos</h2>
+                    <h2>enviado no email cadastrado.</h2>
                     
                 </div>
                 
                 <div class="ui-g center w-50 mt-2">
-                    <p:outputLabel value="Email / Login"/>
-                    <p:inputText placeholder="Login ou Email" class="center w-full"/>
-                    <p:commandButton action="esqueciSenhaCodigo" value="Enviar" class="center w-25 mt-2" update="@form"/>
+                    <p:outputLabel value="Código"/>
+                    <p:inputText placeholder="código" class="center w-full" maxlength="8"/>
+                    <p:commandButton action="null" value="Enviar" class="center w-25 mt-2" update="@form"/>
                     
                     
                 </div>
