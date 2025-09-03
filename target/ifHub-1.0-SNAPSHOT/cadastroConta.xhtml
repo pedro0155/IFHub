@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+      xmlns:p="primefaces"
+      xmlns:f="jakarta.faces.core">
     <h:head>
         <title>IFHub Cadastro</title>
         <h:outputStylesheet name="estilos.css" library="css"/>
@@ -55,11 +56,52 @@
                     </div>
                     <div class='ui-lg-6'>
 
-                        <p:password id="senha" placeholder="Insira sua senha" class="w-full" required="true"/>
-                        <p:tooltip for="senha" position="right" value="Digite sua senha"/>
+                        <p:password id="senha2" placeholder="Insira sua senha" class="w-full" required="true"/>
+                        <p:tooltip for="senha2" position="right" value="Digite sua senha"/>
+                    </div>
+                    <div class='ui-g-12 ui-lg-4 t-right'>
+
+                        <p:outputLabel value="* Insira a Senha Novamente:" class='t-right' />
+                    </div>
+                    <div class='ui-lg-6'>
+
+                        <p:password id="senha1" placeholder="Insira sua senha" class="w-full" required="true"/>
+                        <p:tooltip for="senha1" position="right" value="Digite sua senha"/>
                     </div>
                 </div>
 
+                <div class="ui-g center mt-2">
+                    
+                    <p:outputLabel value="Selecione o Tipo de conta:" class="center" />
+
+                </div>
+                <div class="ui-g center">
+                    
+                    <p:selectOneRadio value="null" layout="lineDirection" id="tipoAluno" class="center">
+                        <f:selectItem itemLabel="Aluno" itemValue="Aluno"/>
+                        <f:selectItem itemLabel="Professor" itemValue="Professor"/>
+                        <f:selectItem itemLabel="Externo" itemValue="Externo"/>
+                        
+                    </p:selectOneRadio>
+                    
+                </div>
+                
+                <div class="ui-g center mt-2">
+                    
+                    <p:outputLabel value="Selecione o Curso" class="center" />
+
+                </div>
+                <div class="ui-g center">
+                    
+                    <p:selectOneMenu value="null" id="tipoCurso" class="center">
+                        <f:selectItem itemLabel="Curso1" itemValue="Aluno"/>
+                        <f:selectItem itemLabel="Curso2" itemValue="Professor"/>
+                        <f:selectItem itemLabel="Curso3" itemValue="Externo"/>
+                        
+                    </p:selectOneMenu>
+                    
+                </div>
+                
                 <div class="ui-g center mt-2 w-full">
 
                     <p:selectBooleanCheckbox value="null" itemLabel="I agree to the Terms of Use and Privacy Policy." class='center'/>

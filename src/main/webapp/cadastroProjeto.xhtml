@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+    <h:head>
+        <title>IFHUB - Cadastro Projeto</title>
+        <h:outputStylesheet name="estilos.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:commandButton update="@form"/>
+
+            <div>
+                <p:fieldset class="borda w-75 center">
+                    <div class="t-center ">
+                        <p:outputLabel value="Novo Projeto" class="bold125"/>
+                    </div>
+                    <div class="w-75 center mt-2">
+                        <p:outputLabel value="Nome Projeto" class="bold"/>
+                        <p:inputText placeholder="Nome do Projeto" class="w-full" required="False"/>
+                    </div>
+                    <div class="w-75 center mt-2">
+                        <p:outputLabel value="Adicionar Membros:" class="bold"/>
+                        <br/>
+                        <p:inputText value="NomeAluno" disabled="true" class="w-15"/>
+                        <p:commandButton icon="pi pi-plus-circle" class="rounded-button ml-2"/>
+                    </div>
+                    <div class="w-75 center mt-2">
+                        <p:outputLabel value="Descrição do Projeto:" class="bold"/>
+                        <p:inputTextarea class="w-full"/>
+                    </div>
+                    
+                    <div class="t-center mt-2">
+                        <p:commandButton value="Confirmar" update="@this"/>
+                        <p:commandButton value="Cancelar" update="@this" class="ml-2"/>
+                        
+                    </div>
+                </p:fieldset>
+            </div>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>IFHub Editar Conta</title>
+        <h:outputStylesheet name="estilos.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div style="background-color: #cccccc">
+
+                <p:commandButton value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@form"/>
+
+            </div> 
+            <div>
+                <p:fieldset class="w-75 center">
+                    <div class="t-center">
+                        <p:graphicImage value="/resources/img/ifhub.png" alt="Logo IFMT" class="w-15 center"/>
+                    </div>
+                    <div class="ui-g">
+                        <div class="ui-g-6">
+                            <p:fieldset class="w-full borda h-550">
+                                <p:outputLabel value="Nome:" class="w-full bold"/>
+                                <p:inputText class="w-full" placeholder="Insira Seu Nome" required="false"/>
+                                <p:outputLabel value="Usuário:" class="w-full mt-2 bold"/>
+                                <p:inputText class="w-full" placeholder="Insira Seu Usuário" required="false"/>
+                                <p:outputLabel value="E-mail:" class="w-full mt-2 bold"/>
+                                <p:inputText class="w-full" placeholder="Insira Seu E-mail" required="false"/>
+                                <p:outputLabel value="Telefone:" class="w-full mt-2 bold"/>
+                                <p:inputText class="w-full" placeholder="Insira Seu Telefone" required="false"/>
+                                <p:outputLabel value="Curso:" class="w-full mt-2 bold"/>
+                                <p:selectOneMenu class="w-full" value="Selecionar Curso">
+                                    <f:selectItem itemValue="Curso1" itemLabel="Curso1"/>
+                                    <f:selectItem itemValue="Curso2" itemLabel="Curso2"/>
+                                    <f:selectItem itemValue="Curso3" itemLabel="Curso3"/>
+                                </p:selectOneMenu>
+                                <p:outputLabel value="Senha Atual:" class="w-full mt-2 bold" />
+                                <p:password class="w-full"/>
+                                <p:outputLabel value="Nova Senha:" class="w-full mt-2 bold"/>
+                                <p:password class="w-full"/>
+                                <p:outputLabel value="Confirmar Nova Senha:" class="mt-2 bold"/>
+                                <p:password class="w-full"/>
+                            </p:fieldset>
+                        </div>
+                        <div class="ui-g-6">
+                            <p:fieldset class="w-full borda t-center h-550">
+                                <p:fieldset class="w-25 borda center">
+                                    <p:graphicImage value="/resources/img/modelo.png" alt="Foto Perfil" class="img-perfil"/>
+                                    
+                                </p:fieldset>
+                                <p:outputLabel value="Formatos Aceitos: .bmp .jpg .png" class="bold"/>
+                                <br/>
+                                <p:commandButton action="null" update="@form" icon="pi pi-file-arrow-up" value="Enviar foto de perfil" class="mt-5"/>
+
+                            </p:fieldset>
+                        </div>
+                        <div class="ui-g center">
+                            <p:commandButton action="paginaPrincipalLogada" update="@form" value="Confirmar"/>
+                            <p:commandButton action="paginaPrincipalLogada" update="@form" value="Cancelar" class="ml-2"/>
+                        </div>
+                    </div>                                          
+                </p:fieldset>
+            </div>
+        </h:form>
+    </h:body>
+</html>
