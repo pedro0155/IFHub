@@ -9,11 +9,6 @@
     </h:head>
     <h:body>
         <h:form>
-            <div style="background-color: #cccccc">
-
-                <p:commandButton value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
-
-            </div> 
             <p:fieldset class="borda">
                 <h:panelGroup>
                 <div class="ui-g cabeca">
@@ -119,22 +114,28 @@
             <p:fieldset class="borda">
                 <p:outputLabel value="Ultimos projetos aprovados" class="bold"/>
                 <div class="card">
-                    <p:carousel value="" var="projeto" numVisible="3" numScroll="3">
+                    <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
                         <div class="product-item">
                             <div class="product-item-content">
-                                <div class="mb-3">
-                                    <!--             <p:graphicImage name="" styleClass="product-image"/>             LOCALIZAR ONDE VAI FICAR AS IMAGENS -->
+                                <p:fieldset class="borda">
+                                    <div class="mb-3 t-center">
+                                        <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
+                                    </div>
+                                    <div>
+                                        <p:commandButton type="button" value="#{dataset.categoria}" class="rounded-button"/>
 
-                                </div>
-                                <div>
-                                    <!--              <h4 class="mb-1"></h4>   -->
-                                    <!--             <h6 class="mt-0 mb-3"></h6>  -->
-                                    <!--            <h6 class="mt-0 mb-3"></h6>  -->
-                                </div>
-                                <div>
-                                    <p:commandButton class="center" value="Visualizar" action="Local da página do projeto" update="@form"/>
-                                </div>
+                                    </div>
+                                    <div>
 
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
+                                        <br/>
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}"/>
+                                    </div>
+                                    <div class="t-center">
+                                        <p:commandButton class="center" value="Visualizar" update="@form"/>
+                                        <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
+                                    </div>
+                                </p:fieldset>
                             </div>
                         </div>
                     </p:carousel>
@@ -144,22 +145,28 @@
             <p:fieldset class="borda">
                 <p:outputLabel value="Projetos" class="bold"/>
                 <div class="card">
-                    <p:carousel value="" var="projeto" numVisible="3" numScroll="3">
+                                        <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
                         <div class="product-item">
                             <div class="product-item-content">
-                                <div class="mb-3">
-                                    <!--          <p:graphicImage name="" styleClass="product-image"/>              LOCALIZAR ONDE VAI FICAR AS IMAGENS -->
+                                <p:fieldset class="borda">
+                                    <div class="mb-3 t-center">
+                                        <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
+                                    </div>
+                                    <div>
+                                        <p:commandButton type="button" value="#{dataset.categoria}" class="rounded-button"/>
 
-                                </div>
-                                <div>
-                                    <!--          <h4 class="mb-1"></h4>  -->
-                                    <!--         <h6 class="mt-0 mb-3"></h6>  -->
-                                    <!--        <h6 class="mt-0 mb-3"></h6>  -->
-                                </div>
-                                <div>
-                                    <p:commandButton class="center" value="Visualizar" action="Local da página do projeto" update="@form"/>
-                                </div>
+                                    </div>
+                                    <div>
 
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
+                                        <br/>
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}"/>
+                                    </div>
+                                    <div class="t-center">
+                                        <p:commandButton class="center" value="Visualizar" update="@form"/>
+                                        <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
+                                    </div>
+                                </p:fieldset>
                             </div>
                         </div>
                     </p:carousel>

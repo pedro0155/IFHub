@@ -1,3 +1,4 @@
 com\mycompany\ifhub\JakartaRestConfiguration.class
+model\Projeto.class
 controller\bean.class
 com\mycompany\ifhub\resources\JakartaEE11Resource.class

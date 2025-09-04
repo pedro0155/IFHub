@@ -9,152 +9,160 @@
     </h:head>
     <h:body>
         <h:form>
-            <div style="background-color: #cccccc">
 
-                <p:commandButton value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
 
-            </div> 
+            <h:panelGroup>
+                <div class="ui-g cabeca">
+
+
+                    <div class="ui-g-12 ui-lg-1">
+                        <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center" />
+
+                        <p:overlayPanel for="menu" style="width:350px">
+                            <div>
+                                <p:fieldset>
+                                    <p:commandLink value="Início" action="paginaPrincipal" update="@form"/>
+                                </p:fieldset>
+                                <p:fieldset>
+                                    <p:commandLink value="Area do Aluno" action="areaAluno"/>
+                                </p:fieldset>
+                                <p:fieldset>
+                                    <p:commandLink value="Projetos" action="null"/>
+                                </p:fieldset>
+                                <p:fieldset>
+                                    <p:commandLink value="Sobre nós" action="null"/>
+                                </p:fieldset>
+                            </div>
+
+                        </p:overlayPanel>
+                    </div>
+                    <div class="ui-g-12 ui-lg-9">
+                        <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
+                    </div>
+
+
+
+                    <div class="ui-g-12 ui-lg-2">
+
+                        <p:commandButton id="usuario" type="button" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
+                        <p:overlayPanel for="usuario" style="width: 450px">
+                            <div class="ui-g">
+                                <div class="ui-lg-12 t-right">
+                                    <p:commandLink value="Editar Conta" class="bold w-full" action="editarConta"/>
+                                </div>
+                                <div class="ui-g-12 ui-lg-5">
+                                    <p:fieldset class="w-full borda">
+                                        <p:graphicImage value="/resources/img/modelo.png" alt="Foto Perfil" class="img-perfil"/>
+                                    </p:fieldset>
+                                </div>
+                                <div class="ui-g-12 ui-lg-7">
+                                    <p:fieldset>
+                                        <p:outputLabel value="Nome:"/>
+                                        <p:outputLabel value="usuarionome"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:outputLabel value="Usuário:"/>
+                                        <p:outputLabel value="usuariousuario"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:outputLabel value="E-mail:"/>
+                                        <p:outputLabel value="usuarioE-mail"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:outputLabel value="Curso:"/>
+                                        <p:outputLabel value="usuarioCurso"/>
+                                    </p:fieldset>
+
+                                </div>
+
+                                <div class="ui-lg-12 t-center">
+                                    <p:commandButton value="Meus Projetos" icon="pi pi-sign-out" action="paginaPrincipal" update="@form"/>
+                                    <p:commandButton value="Desconectar" icon="pi pi-sign-out" action="paginaPrincipal" update="@form" class="ml-2"/>
+                                </div>
+                            </div>
+                        </p:overlayPanel>
+
+                        <p:commandButton icon="pi pi-bell" styleClass="rounded-button ui-button-info ml-2 " action="paginaPrincipalLogada" update="@form"/>
+
+                    </div>
+
+                </div>
+            </h:panelGroup> <!-- Cabeçalho -->
+
             <p:fieldset class="borda">
-                <h:panelGroup>
-                    <div class="ui-g cabeca">
-
-
-                        <div class="ui-g-12 ui-lg-1">
-                            <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center" />
-
-                            <p:overlayPanel for="menu" style="width:350px">
-                                <div>
-                                    <p:fieldset>
-                                        <p:commandLink value="Início" action="paginaPrincipal" update="@form"/>
-                                    </p:fieldset>
-                                    <p:fieldset>
-                                        <p:commandLink value="Area do Aluno" action="areaAluno"/>
-                                    </p:fieldset>
-                                    <p:fieldset>
-                                        <p:commandLink value="Projetos" action="null"/>
-                                    </p:fieldset>
-                                    <p:fieldset>
-                                        <p:commandLink value="Sobre nós" action="null"/>
-                                    </p:fieldset>
-                                </div>
-
-                            </p:overlayPanel>
-                        </div>
-                        <div class="ui-g-12 ui-lg-9">
-                            <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
-                        </div>
-
-
-
-                        <div class="ui-g-12 ui-lg-2">
-
-                            <p:commandButton id="usuario" type="button" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
-                            <p:overlayPanel for="usuario" style="width: 450px">
-                                <div class="ui-g">
-                                    <div class="ui-lg-12 t-right">
-                                        <p:commandLink value="Editar Conta" class="bold w-full" action="editarConta"/>
-                                    </div>
-                                    <div class="ui-g-12 ui-lg-5">
-                                        <p:fieldset class="w-full borda">
-                                            <p:graphicImage value="/resources/img/modelo.png" alt="Foto Perfil" class="img-perfil"/>
-                                        </p:fieldset>
-                                    </div>
-                                    <div class="ui-g-12 ui-lg-7">
-                                        <p:fieldset>
-                                            <p:outputLabel value="Nome:"/>
-                                            <p:outputLabel value="usuarionome"/>
-                                        </p:fieldset>
-                                        <p:fieldset>
-                                            <p:outputLabel value="Usuário:"/>
-                                            <p:outputLabel value="usuariousuario"/>
-                                        </p:fieldset>
-                                        <p:fieldset>
-                                            <p:outputLabel value="E-mail:"/>
-                                            <p:outputLabel value="usuarioE-mail"/>
-                                        </p:fieldset>
-                                        <p:fieldset>
-                                            <p:outputLabel value="Curso:"/>
-                                            <p:outputLabel value="usuarioCurso"/>
-                                        </p:fieldset>
-
-                                    </div>
-
-                                    <div class="ui-lg-12 t-center">
-                                        <p:commandButton value="Meus Projetos" icon="pi pi-sign-out" action="paginaPrincipal" update="@form"/>
-                                        <p:commandButton value="Desconectar" icon="pi pi-sign-out" action="paginaPrincipal" update="@form" class="ml-2"/>
-                                    </div>
-                                </div>
-                            </p:overlayPanel>
-
-                            <p:commandButton icon="pi pi-bell" styleClass="rounded-button ui-button-info ml-2 " action="paginaPrincipalLogada" update="@form"/>
-
-                        </div>
-
+                <div class="ui-g">
+                    <div class="ui-lg-11">
+                        <p:outputLabel value="Olá nomeAluno" class="bold125"/>
                     </div>
-                </h:panelGroup> <!-- Cabeçalho -->
-
-                <p:fieldset class="borda">
-                    <div class="ui-g">
-                        <div class="ui-lg-11">
-                            <p:outputLabel value="Olá nomeAluno" class="bold125"/>
-                        </div>
-                        <div class="ui-lg-1">
-                            <p:commandButton value="Novo Projeto" update="@form" class="a-left" action="cadastroProjeto"/>
-
-                        </div>
+                    <div class="ui-lg-1">
+                        <p:commandButton value="Novo Projeto" update="@form" class="a-left" action="cadastroProjeto"/>
 
                     </div>
 
-                    <p:outputLabel value="Projetos em Andamento:" class="bold"/>
-                    <div class="card">
-                        <p:carousel value="" var="projeto" numVisible="3" numScroll="3">
-                            <div class="product-item">
-                                <div class="product-item-content">
-                                    <div class="mb-3">
-                                        <!--             <p:graphicImage name="" styleClass="product-image"/>             LOCALIZAR ONDE VAI FICAR AS IMAGENS -->
+                </div>
+
+                <p:outputLabel value="Projetos em Andamento:" class="bold"/>
+                <div class="card">
+                                        <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
+                        <div class="product-item">
+                            <div class="product-item-content">
+                                <p:fieldset class="borda">
+                                    <div class="mb-3 t-center">
+                                        <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
+                                    </div>
+                                    <div>
+                                        <p:commandButton type="button" value="#{dataset.categoria}" class="rounded-button"/>
 
                                     </div>
                                     <div>
-                                        <!--              <h4 class="mb-1"></h4>   -->
-                                        <!--             <h6 class="mt-0 mb-3"></h6>  -->
-                                        <!--            <h6 class="mt-0 mb-3"></h6>  -->
-                                    </div>
-                                    <div>
-                                        <p:commandButton class="center" value="Visualizar" action="Local da página do projeto" update="@form"/>
-                                    </div>
 
-                                </div>
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
+                                        <br/>
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}"/>
+                                    </div>
+                                    <div class="t-center">
+                                        <p:commandButton class="center" value="Visualizar" update="@form"/>
+                                        <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
+                                    </div>
+                                </p:fieldset>
                             </div>
-                        </p:carousel>
-                    </div>
+                        </div>
+                    </p:carousel>
+                </div>
 
-                </p:fieldset>
-                <p:fieldset class="borda">
-                    <p:outputLabel value="Projetos Finalizados" class="bold"/>
-                    <div class="card">
-                        <p:carousel value="" var="projeto" numVisible="3" numScroll="3">
-                            <div class="product-item">
-                                <div class="product-item-content">
-                                    <div class="mb-3">
-                                        <!--             <p:graphicImage name="" styleClass="product-image"/>             LOCALIZAR ONDE VAI FICAR AS IMAGENS -->
-
-                                    </div>
-                                    <div>
-                                        <!--              <h4 class="mb-1"></h4>   -->
-                                        <!--             <h6 class="mt-0 mb-3"></h6>  -->
-                                        <!--            <h6 class="mt-0 mb-3"></h6>  -->
-                                    </div>
-                                    <div>
-                                        <p:commandButton class="center" value="Visualizar" action="Local da página do projeto" update="@form"/>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </p:carousel>
-                    </div>
-
-                </p:fieldset>
             </p:fieldset>
+            <p:fieldset class="borda">
+                <p:outputLabel value="Projetos Finalizados" class="bold"/>
+                <div class="card">
+                                       <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
+                        <div class="product-item">
+                            <div class="product-item-content">
+                                <p:fieldset class="borda">
+                                    <div class="mb-3 t-center">
+                                        <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
+                                    </div>
+                                    <div>
+                                        <p:commandButton type="button" value="#{dataset.categoria}" class="rounded-button"/>
+
+                                    </div>
+                                    <div>
+
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
+                                        <br/>
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}"/>
+                                    </div>
+                                    <div class="t-center">
+                                        <p:commandButton class="center" value="Visualizar" update="@form"/>
+                                        <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
+                                    </div>
+                                </p:fieldset>
+                            </div>
+                        </div>
+                    </p:carousel>
+                </div>
+
+            </p:fieldset>
+
         </h:form>
     </h:body>
 </html>

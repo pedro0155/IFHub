@@ -9,10 +9,19 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:commandButton update="@form"/>
+             <div style="background-color: #cccccc">
+
+                <p:commandButton icon="pi pi-angle-left" styleClass="ui-button-flat" action="index" process="@this"/>
+                <!--   <p:commandButton value="recarregar" update="@form" /> -->
+
+            </div>
+       
 
             <div>
-                <p:fieldset class="borda w-75 center">
+                <p:fieldset class="borda w-75 center mt-2">
+                                        <div class="t-center">
+                        <p:graphicImage value="/resources/img/ifhub.png" alt="Logo IFMT" class="w-15 center"/>
+                    </div>
                     <div class="t-center ">
                         <p:outputLabel value="Novo Projeto" class="bold125"/>
                     </div>
@@ -32,8 +41,8 @@
                     </div>
                     
                     <div class="t-center mt-2">
-                        <p:commandButton value="Confirmar" update="@this"/>
-                        <p:commandButton value="Cancelar" update="@this" class="ml-2"/>
+                        <p:commandButton value="Confirmar" update="@this" action="areaAluno"/>
+                        <p:commandButton value="Cancelar" update="@this" class="ml-2" action="areaAluno"/>
                         
                     </div>
                 </p:fieldset>

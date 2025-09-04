@@ -9,33 +9,33 @@
     </h:head>
     <h:body>
         <h:form>
-                        <div style="background-color: #cccccc">
+            <div style="background-color: #cccccc">
 
                 <p:commandButton icon="pi pi-angle-left" styleClass="ui-button-flat" action="index" process="@this"/>
-              <!--   <p:commandButton value="recarregar" update="@form" /> -->
+                <!--   <p:commandButton value="recarregar" update="@form" /> -->
 
             </div>
-            
-            <fieldset class="mt-2 center w-75 borda">
+
+            <fieldset class="mt-2 center w-75 borda ">
                 <div class='h-25'>
-                <div class="mt-5 center w-50 t-center">
-                    <h2>Insira o codigo de 8 digitos</h2>
-                    <h2>enviado no email cadastrado.</h2>
-                    
+                    <div class="mt-5 center w-50 t-center">
+                        <h2>Insira o codigo de 8 digitos</h2>
+                        <h2>enviado no email cadastrado.</h2>
+
+                    </div>
+
+                    <div class="ui-g center w-50 mt-2">
+                        <p:outputLabel value="Código"/>
+                        <p:inputText placeholder="código" class="center w-full" maxlength="8"/>
+                        <p:commandButton action="index" value="Confirmar" class="center w-25 mt-2" update="@form"/>
+
+
+                    </div>
                 </div>
-                
-                <div class="ui-g center w-50 mt-2">
-                    <p:outputLabel value="Código"/>
-                    <p:inputText placeholder="código" class="center w-full" maxlength="8"/>
-                    <p:commandButton action="null" value="Enviar" class="center w-25 mt-2" update="@form"/>
-                    
-                    
-                </div>
-                </div>
-                               
-                
+
+
             </fieldset>
-            
+
         </h:form>
 
     </h:body>
