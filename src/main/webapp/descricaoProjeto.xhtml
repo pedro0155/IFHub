@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+    <h:head>
+        <title>IFHub Página Principal</title>
+        <h:outputStylesheet name="estilos.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:fieldset class="borda">
+                <h:panelGroup>
+                    <div class="ui-g cabeca">
+
+
+                        <div class="ui-g-12 ui-lg-1">
+                            <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center" />
+
+                            <p:overlayPanel for="menu" style="width:350px">
+                                <div>
+                                    <p:fieldset>
+                                        <p:commandLink value="Início" action="paginaPrincipal" update="@form"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:commandLink value="Area do Aluno" action="index"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:commandLink value="Projetos" action="null"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:commandLink value="Sobre nós" action="null"/>
+                                    </p:fieldset>
+                                </div>
+
+                            </p:overlayPanel>
+                        </div>
+                        <div class="ui-g-12 ui-lg-9">
+                            <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
+                        </div>
+
+
+
+                        <div class="ui-g-12 ui-lg-2">
+                            <p:commandButton value="Entrar" class="w-50 mr-2 center" update="@form" action="index"/>
+                            <p:commandButton update="@form" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
+                        </div>
+
+                    </div>
+                </h:panelGroup> <!-- Cabeçalho -->
+                <div class="ui-g ui-lg-12">
+                    <div class="ui-lg-12 t-center mt-5">
+                        <p:graphicImage value="/resources/img/ifhub.png" alt="Logo Projeto" class="w-15"/>
+                    </div>
+                    <div class="ui-g-12 mt-2 t-center">
+                        <p:outputLabel value="IFHub" class="bold300 texto"/>
+                        
+                    </div>
+                    <div class="ui-g-12 mt-2 center w-75 justificado">
+                        <p:outputLabel value="  O desenvolvimento de projetos no contexto educacional, cada vez mais complexos e interdisciplinares, exige uma gestão eficiente de informações para garantir o sucesso da iniciativa. Além disso, a crescente necessidade da disponibilização de artefatos e informações desses projetos para acesso da comunidade externa e interna do IFMT tem se tornado um ponto de melhora inadiável (INSTITUTO FEDERAL DE EDUCAÇÃO, CIêNCIA E TECNOLOGIA DE MATO GROSSO, 2021).
+	" class="bold125 texto"/>
+                        <br/>
+                        <br/>
+                        <p:outputLabel value="	Atualmente, a falta de um sistema centralizado para armazenar e organizar a documentação e os arquivos relacionados a esses projetos no IFMT, bem como a falta de visibilidade do trabalho desenvolvido, evidenciam um desafio para coordenadores e membros das equipes de projetos desenvolvidos no IFMT. Além disso,  ao cursar as disciplinas de projeto integrador do curso de Tecnologia em Análise e Desenvolvimento de Sistemas do IFMT - Campus Rondonópolis e participar de projetos de pesquisa, os autores deste artigo perceberam que há dispersão de informações em diferentes plataformas, dificuldade de encontrar artefatos e informações dos projetos em andamento e concluídos, falta de controle de versões e dificuldades na divulgação dos projetos. Assim, esses problemas são comuns e comprometem a colaboração entre os membros da equipe e a qualidade final do projeto.
+	" class="bold125 texto"/>
+                        <br/>
+                        <br/>
+                        <p:outputLabel value="	Diante desse cenário, torna-se evidente a necessidade de uma solução que permita a centralização, organização e compartilhamento de informações de forma segura e eficiente. O desenvolvimento de um repositório digital como o IFHub surge como uma alternativa para apoiar na solução dessa problemática, oferecendo um ambiente colaborativo e organizado para apoiar na gestão de projetos e o armazenamento e compartilhamento dos artefatos gerados/produzidos pelas equipes.
+	" class="bold125 texto"/>
+                        <br/>
+                        <br/>
+                        <p:outputLabel value="O objetivo geral deste projeto é desenvolver um software para o armazenamento e compartilhamento de artefatos e informações de projetos (integradores, de pesquisa e extensão) desenvolvidos no IFMT - Campus Rondonópolis.
+" class="bold125 texto"/>
+                        <br/>
+                        <br/>
+                        <p:outputLabel value="Eduardo G. Goveia1, Natã Kimberly de Almeida1, Pedro Henrique de Andrade Barbosa1, Rodrigo Augusto Oliveira Kunz1, Victor Hugo Santos de Moraes1, Rafael Rodrigues Garcia², Rodrigo Carlo Toloi²
+" class="bold125 texto"/>
+                        
+                    </div>
+                    
+                </div>
+                <div class="ui-g t-center">
+                    <p:outputLabel value="Venha conhecer alguns dos projetos publicados em nosso site" class="bold125 w-full"/>
+                    <p:commandButton value="Projetos" action="buscarProjeto" update="@form" class="botao"/>
+                    
+                </div>
+
+                
+            </p:fieldset>
+
+        </h:form>
+    </h:body>
+</html>

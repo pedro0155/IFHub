@@ -102,29 +102,29 @@
                 </div>
 
                 <p:outputLabel value="Projetos em Andamento:" class="bold"/>
-                <div class="card">
-                                        <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
+             <div class="card">
+                    <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
                         <div class="product-item">
                             <div class="product-item-content">
-                                <p:fieldset class="borda">
+
                                     <div class="mb-3 t-center">
                                         <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
                                     </div>
                                     <div>
-                                        <p:commandButton type="button" value="#{dataset.categoria}" class="rounded-button"/>
+                                        <p:tag value="#{dataset.categoria}" class="rounded-button mt-2"/>
 
                                     </div>
-                                    <div>
+                                    <div class="mt-2">
 
-                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold mt-2"/>
                                         <br/>
-                                        <p:outputLabel value="#{dataset.descricaoProjeto}"/>
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2"/>
                                     </div>
-                                    <div class="t-center">
+                                    <div class="t-center mt-2">
                                         <p:commandButton class="center" value="Visualizar" update="@form"/>
                                         <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
                                     </div>
-                                </p:fieldset>
+
                             </div>
                         </div>
                     </p:carousel>
@@ -133,29 +133,29 @@
             </p:fieldset>
             <p:fieldset class="borda">
                 <p:outputLabel value="Projetos Finalizados" class="bold"/>
-                <div class="card">
-                                       <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
+                    <div class="card">
+                    <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
                         <div class="product-item">
                             <div class="product-item-content">
-                                <p:fieldset class="borda">
+
                                     <div class="mb-3 t-center">
                                         <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
                                     </div>
                                     <div>
-                                        <p:commandButton type="button" value="#{dataset.categoria}" class="rounded-button"/>
+                                        <p:tag value="#{dataset.categoria}" class="rounded-button mt-2"/>
 
                                     </div>
-                                    <div>
+                                    <div class="mt-2">
 
-                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold mt-2"/>
                                         <br/>
-                                        <p:outputLabel value="#{dataset.descricaoProjeto}"/>
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2"/>
                                     </div>
-                                    <div class="t-center">
+                                    <div class="t-center mt-2">
                                         <p:commandButton class="center" value="Visualizar" update="@form"/>
                                         <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
                                     </div>
-                                </p:fieldset>
+
                             </div>
                         </div>
                     </p:carousel>

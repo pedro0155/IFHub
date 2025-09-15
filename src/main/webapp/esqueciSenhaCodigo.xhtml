@@ -11,8 +11,7 @@
         <h:form>
             <div style="background-color: #cccccc">
 
-                <p:commandButton icon="pi pi-angle-left" styleClass="ui-button-flat" action="index" process="@this"/>
-                <!--   <p:commandButton value="recarregar" update="@form" /> -->
+                <p:commandButton action="paginaPrincipal" value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
 
             </div>
 
@@ -26,9 +25,9 @@
                 <div class='h-25'>
                     <div class="mt-5 center w-50 t-center">
 
-                        <h:outputText value="Insira o codigo de 8 digitos" class="t-center bold125"/>
+                        <h:outputText value="Insira o codigo de 8 digitos" class="t-center bold125 escrita"/>
                         <br/>
-                        <h:outputText value="enviado no email cadastrado." class="t-center bold125"/>
+                        <h:outputText value="enviado no email cadastrado." class="t-center bold125 escrita"/>
 
 
                     </div>
@@ -38,7 +37,7 @@
                     <div class="ui-g center w-50 mt-2">
                         <p:outputLabel value="Código"/>
                         <p:inputText placeholder="código" class="center w-full" maxlength="8"/>
-                        <p:commandButton action="index" value="Confirmar" class="center w-25 mt-2" update="@form"/>
+                        <p:commandButton action="index" value="Confirmar" class="botao" update="@form"/>
 
 
                     </div>

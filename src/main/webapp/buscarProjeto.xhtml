@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+    <h:head>
+        <title>IFHub Página Principal</title>
+        <h:outputStylesheet name="estilos.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:fieldset class="borda">
+                <h:panelGroup>
+                    <div class="ui-g cabeca">
+
+
+                        <div class="ui-g-12 ui-lg-1">
+                            <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center" />
+
+                            <p:overlayPanel for="menu" style="width:350px">
+                                <div>
+                                    <p:fieldset>
+                                        <p:commandLink value="Início" action="paginaPrincipal" update="@form"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:commandLink value="Area do Aluno" action="index"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:commandLink value="Projetos" action="null"/>
+                                    </p:fieldset>
+                                    <p:fieldset>
+                                        <p:commandLink value="Sobre nós" action="descricaoProjeto"/>
+                                    </p:fieldset>
+                                </div>
+
+                            </p:overlayPanel>
+                        </div>
+                        <div class="ui-g-12 ui-lg-9">
+                            <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
+                        </div>
+
+
+
+                        <div class="ui-g-12 ui-lg-2">
+                            <p:commandButton value="Entrar" class="w-50 mr-2 center" update="@form" action="index"/>
+                            <p:commandButton action="#{ctl.init()}" update="@form" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
+                        </div>
+
+                    </div>
+                </h:panelGroup> <!-- Cabeçalho -->
+
+
+                <h:panelGroup>
+                    <div class="h-20">
+                        <div class="ui-g ui-lg-8 center mt-5 borda">
+                            <h:outputText value="IFHub é um repositório digital que organiza e compartilha projetos de pesquisa e extensão do IFMT - Campus Rondonópolis." class="bold125 t-center w-full escrita"/>
+
+                            <h:outputText  value="Facilita o acesso, colaboração e busca por artefatos, garantindo integridade dos dados. "  class="bold125 t-center w-full mt-2 escrita"/>
+
+                            <h:outputText  value="A plataforma melhora a produtividade e padroniza processos, contribuindo para o sucesso dos projetos."  class="bold125 t-center w-full mt-2 escrita"/>
+                        </div>
+                    </div >
+                </h:panelGroup> <!-- descrição -->
+
+
+                <div class="ui-g center">
+                    <div class="ui-g-12 ui-lg-6 center">
+                        <span class="ui-input-icon-left w-full">
+                            <i class="pi pi-search" />
+                            <p:inputText placeholder="Search" class="w-full" />
+                        </span>
+                    </div>
+                </div>
+
+            </p:fieldset>
+            
+            <p:dataScroller value="#{ctl.projetos}" var="projeto" rows="4" chunkSize="4" lazy="false" mode="inline">
+                <p:panelGrid columns="4">
+                    <p:panel>
+                        <div class="product-item">
+                            <div class="product-item-content">
+
+                                    <div class="mb-3 t-center">
+                                        <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
+                                    </div>
+                                    <div>
+                                        <p:tag value="#{dataset.categoria}" class="rounded-button mt-2"/>
+
+                                    </div>
+                                    <div class="mt-2">
+
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold mt-2"/>
+                                        <br/>
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2"/>
+                                    </div>
+                                    <div class="t-center mt-2">
+                                        <p:commandButton class="center" value="Visualizar" update="@form"/>
+                                        <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </p:panel>
+                </p:panelGrid>
+            </p:dataScroller>
+
+
+        </h:form>
+    </h:body>
+</html>
