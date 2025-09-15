@@ -11,16 +11,23 @@
         <h:form>
                         <div style="background-color: #cccccc">
 
-                <p:commandButton icon="pi pi-angle-left" styleClass="ui-button-flat" action="index" process="@this"/>
-              <!--   <p:commandButton value="recarregar" update="@form" /> -->
-
+                <p:commandButton action="paginaPrincipal" value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
+                
             </div>
             
             <fieldset class="mt-2 center w-75 borda h-550">
+                
+                <div class="t-center mt-5">
+                        <p:graphicImage value="/resources/img/ifhub.png" alt="Logo IFMT" class="w-15 center"/>
+                    </div>
+                
                 <div class='h-25'>
                 <div class="mt-5 center w-50 t-center">
-                    <h2>Insira o usuário ou Email cadastrado.</h2>
-                    <h2>Será enviado um código para confirmação no email cadastrado.</h2>
+                    <h:outputText value="Insira o usuário ou Email cadastrado." class="t-center bold125"/>
+                    <br/>
+                    <h:outputText value="Será enviado um código para confirmação no email cadastrado." class="t-center bold125"/>
+                    
+                    
                     
                 </div>
                 

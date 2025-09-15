@@ -13,6 +13,15 @@ import java.util.ArrayList;
 @SessionScoped
 public class bean implements Serializable {
     
+        public bean() {
+            
+            init();
+    } //construtor
+    
+    
+    
+    
+    
     private List<Projeto> projetos;
     
     public void init(){
@@ -36,8 +45,7 @@ public class bean implements Serializable {
     }
     
     
-    public bean() {
-    } //construtor
+
     
     
     private String cpLogin;

@@ -12,15 +12,14 @@
         <h:form>
             <div style="background-color: #cccccc">
 
-                <p:commandButton icon="pi pi-angle-left" styleClass="ui-button-flat" action="index" process="@this"/>
-                <!--  <p:commandButton value="recarregar" update="@form"/> -->
+                <p:commandButton action="paginaPrincipal" value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
 
             </div>
 
             <p:fieldset class="w-50 center mt-2 borda">
-                                    <div class="t-center">
-                        <p:graphicImage value="/resources/img/ifhub.png" alt="Logo IFMT" class="w-15 center"/>
-                    </div>
+                <div class="t-center">
+                    <p:graphicImage value="/resources/img/ifhub.png" alt="Logo IFMT" class="w-15 center"/>
+                </div>
                 <div class="ui-g">
                     <div class='ui-g-12 ui-lg-4 t-right'>
                         <p:outputLabel value="* Nome:" class='t-right'/>
@@ -33,7 +32,7 @@
                     </div>
                     <div class='ui-g-12 ui-lg-4 t-right'>
 
-                        <p:outputLabel value="* Nome Usuário:" class='t-right'/>
+                        <p:outputLabel value="* Nome usuário:" class='t-right'/>
 
                     </div>
                     <div class='ui-lg-6'>
@@ -64,47 +63,53 @@
                     </div>
                     <div class='ui-g-12 ui-lg-4 t-right'>
 
-                        <p:outputLabel value="* Insira a Senha Novamente:" class='t-right' />
+                        <p:outputLabel value="* Insira a senha novamente:" class='t-right' />
                     </div>
                     <div class='ui-lg-6'>
 
                         <p:password id="senha1" placeholder="Insira sua senha" class="w-full" required="true"/>
                         <p:tooltip for="senha1" position="right" value="Digite sua senha"/>
                     </div>
+                    <div class='ui-g ui-lg-12'>
+
+                        <h:outputText value="Campos com * são obrigatórios" class="center bold" />
+                    </div>
                 </div>
 
+
+
                 <div class="ui-g center mt-2">
-                    
-                    <p:outputLabel value="Selecione o Tipo de conta:" class="center" />
+
+                    <p:outputLabel value="Selecione o tipo de conta:" class="center" />
 
                 </div>
                 <div class="ui-g center">
-                    
+
                     <p:selectOneRadio value="null" layout="lineDirection" id="tipoAluno" class="center">
                         <f:selectItem itemLabel="Aluno" itemValue="Aluno"/>
                         <f:selectItem itemLabel="Professor" itemValue="Professor"/>
                         <f:selectItem itemLabel="Externo" itemValue="Externo"/>
-                        
+
                     </p:selectOneRadio>
-                    
+
                 </div>
-                
+
                 <div class="ui-g center mt-2">
-                    
+
                     <p:outputLabel value="Selecione o Curso" class="center" />
 
                 </div>
                 <div class="ui-g center">
-                    
+
                     <p:selectOneMenu value="null" id="tipoCurso" class="center">
                         <f:selectItem itemLabel="Curso1" itemValue="Aluno"/>
                         <f:selectItem itemLabel="Curso2" itemValue="Professor"/>
                         <f:selectItem itemLabel="Curso3" itemValue="Externo"/>
-                        
+
                     </p:selectOneMenu>
-                    
+
                 </div>
-                
+
                 <div class="ui-g center mt-2 w-full">
 
                     <p:selectBooleanCheckbox value="null" itemLabel="I agree to the Terms of Use and Privacy Policy." class='center'/>

@@ -4,6 +4,11 @@
     object-fit: cover; 
 }
 
+.botao{
+    width: 150px !important;
+    
+}
+
 .a-right{
     float: right;
 }
