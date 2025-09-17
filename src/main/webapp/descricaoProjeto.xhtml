@@ -9,8 +9,7 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:fieldset class="borda">
-                <h:panelGroup>
+                 <h:panelGroup>
                     <div class="ui-g cabeca">
 
 
@@ -26,7 +25,7 @@
                                         <p:commandLink value="Area do Aluno" action="index"/>
                                     </p:fieldset>
                                     <p:fieldset>
-                                        <p:commandLink value="Projetos" action="null"/>
+                                        <p:commandLink  value="Projetos" action="null"/>
                                     </p:fieldset>
                                     <p:fieldset>
                                         <p:commandLink value="Sobre nós" action="null"/>
@@ -48,6 +47,8 @@
 
                     </div>
                 </h:panelGroup> <!-- Cabeçalho -->
+            <p:fieldset class="borda">
+           
                 <div class="ui-g ui-lg-12">
                     <div class="ui-lg-12 t-center mt-5">
                         <p:graphicImage value="/resources/img/ifhub.png" alt="Logo Projeto" class="w-15"/>
@@ -85,7 +86,42 @@
                     
                 </div>
 
-                
+                <div class="card">
+    <h:form>
+        <p:growl id="messages" showDetail="true"/>
+
+        <p:tree id="docs" dynamic="true">
+            <p:treeNode expandedIcon="pi pi-folder-open" collapsedIcon="pi pi-folder">
+                <h:outputText value="pasta1"/>
+            </p:treeNode>
+            <p:treeNode type="app" icon="pi pi-save">
+                <h:outputText value="app1"/>
+            </p:treeNode>
+            <p:treeNode type="document" icon="pi pi-file">
+                <h:outputText value="doc1"/>
+            </p:treeNode>
+            <p:treeNode type="excel" icon="pi pi-file-excel">
+                <h:outputText value="excel1"/>
+            </p:treeNode>
+            <p:treeNode type="travel" icon="pi pi-file-pdf">
+                <h:outputText value="travel1"/>
+            </p:treeNode>
+            <p:treeNode type="picture" icon="pi pi-image">
+                <h:outputText value="img1"/>
+            </p:treeNode>
+            <p:treeNode type="video" icon="pi pi-video">
+                <h:outputText value="video1"/>
+            </p:treeNode>
+        </p:tree>
+
+        <p:contextMenu for="docs">
+            <p:menuitem value="View" update="messages" 
+                        icon="pi pi-search"/>
+            <p:menuitem value="Download" update="docs" 
+                        icon="pi pi-download"/>
+        </p:contextMenu>
+    </h:form>
+</div>
             </p:fieldset>
 
         </h:form>
