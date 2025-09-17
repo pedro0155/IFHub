@@ -9,6 +9,7 @@
     </h:head>
     <h:body>
         <h:form>
+             <p:growl id="growl" showDetail="true"/>
             <div style="background-color: #cccccc">
 
                 <p:commandButton action="paginaPrincipal" value="Voltar" icon="pi pi-angle-left" styleClass="ui-button-flat"  process="@this"/>
@@ -38,7 +39,23 @@
                         <p:outputLabel value="Descrição do Projeto:" class="bold"/>
                         <p:inputTextarea class="w-full"/>
                     </div>
-
+                    <div class="w-75 center mt-2">
+                        <p:fileUpload listener="#{ctl.upload}"
+                                      mode="advanced"
+                                      dropZone="@form:@parent"
+                                      multiple="true"
+                                      skinSimple="true"
+                                      update="@form"
+                                      label="Escolha o arquivo"
+                                      uploadLabel="Enviar"
+                                      cancelLabel="Cancelar"
+                                      >
+                            <p:validateFile allowTypes="/(\.|\/)(doc|docx|gif|jpeg|jpg|png|pdf)$/" sizeLimit="20000000" />
+                        </p:fileUpload>
+                             <p:outputLabel value="É permitido selecionar vários arquivos para enviar de uma vez. Formatos permitidos: .doc, .docx, .gif, .jpeg, .jpg, .png, .pdf. Tamanho máximo: 20 MB." style="font-size: 0.8em; color: gray;" />
+                             <!-- fiz ccs inline pq estava com preguiça... -->
+ 
+                    </div>
                     <div class="t-center mt-2">
                         <p:commandButton value="Confirmar" update="@this" action="areaAluno"/>
                         <p:commandButton value="Cancelar" update="@this" class="ml-2" action="areaAluno"/>
