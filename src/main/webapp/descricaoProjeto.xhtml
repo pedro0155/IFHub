@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+      xmlns:p="primefaces"
+      xmlns:f="jakarta.faces.core">
     <h:head>
         <title>IFHub Página Principal</title>
         <h:outputStylesheet name="estilos.css" library="css"/>
@@ -51,7 +52,7 @@
            
                 <div class="ui-g ui-lg-12">
                     <div class="ui-lg-12 t-center mt-5">
-                        <p:graphicImage value="/resources/img/projetos/#{ctl.mostrarid}.jpg" alt="Logo Projeto" class="w-15"/>
+                        <p:graphicImage value="/resources/img/projetos/#{ctl.mostrarid}.jpg" alt="Logo Projeto" class="w-25"/>
                     </div>
                     <div class="ui-g-12 mt-2 t-center">
                         <p:outputLabel value="#{ctl.mostrartitulo}" class="bold300 texto"/>
@@ -62,50 +63,57 @@
 
                         
                     </div>
+                    <div class="ui-g-12 mt-2 center w-75 justificado">
+                        <p:outputLabel value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="bold125 texto"/>
+
+                        
+                    </div>
+                    <div class="ui-g-12 mt-2 center w-75 justificado">
+                        <p:outputLabel value="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" class="bold125 texto"/>
+
+                        
+                    </div>
+                    <div class="ui-g-12 mt-2 center w-75 justificado">
+                        <p:outputLabel value="Ana Clara Oliveira (2025, Psicologia), Lucas A. Santiago (2024, Engenharia de Software), Mariana F. Costa (2023, Linguística Aplicada), Eduardo M. Pereira (2026, Filosofia)" class="bold125 texto"/>
+
+                        
+                    </div>
                     
                 </div>
-                <div class="ui-g t-center">
-                    <p:outputLabel value="Venha conhecer alguns dos projetos publicados em nosso site" class="bold125 w-full"/>
-                    <p:commandButton value="Projetos" action="buscarProjeto" update="@form" class="botao"/>
-                    
+
+                <div class="w-75 center mt-5 ui-g">
+                    <div class="ui-g ui-lg-6">
+                        <div class="ui-g ui-lg-3">
+                            <i class="pi pi-file" />                    
+                            <p:outputLabel value="Arquivo1.docx"/>
+                        </div>
+                        <div class="ui-g ui-lg-8">
+                            <p:commandLink value="Baixar" class="ml-2"/>
+                        </div>
+                        <div class="ui-g ui-lg-3">
+                            <i class="pi pi-file" />                    
+                            <p:outputLabel value="Arquivo2.jpg"/>
+                        </div>
+                        <div class="ui-g ui-lg-8">
+                            <p:commandLink value="Baixar" class="ml-2"/>
+                        </div>
+                        <div class="ui-g ui-lg-3">
+                            <i class="pi pi-file" />                    
+                            <p:outputLabel value="Arquivo3.zip"/>
+                        </div>
+                        <div class="ui-g ui-lg-8">
+                            <p:commandLink value="Baixar" class="ml-2"/>
+                        </div>
+                        <div class="ui-g ui-lg-3">
+                            <i class="pi pi-file" />                    
+                            <p:outputLabel value="Arquivo4.bmp"/>
+                        </div>
+                        <div class="ui-g ui-lg-8">
+                            <p:commandLink value="Baixar" class="ml-2"/>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card">
-    <h:form>
-        <p:growl id="messages" showDetail="true"/>
-
-        <p:tree id="docs" dynamic="true">
-            <p:treeNode expandedIcon="pi pi-folder-open" collapsedIcon="pi pi-folder">
-                <h:outputText value="pasta1"/>
-            </p:treeNode>
-            <p:treeNode type="app" icon="pi pi-save">
-                <h:outputText value="app1"/>
-            </p:treeNode>
-            <p:treeNode type="document" icon="pi pi-file">
-                <h:outputText value="doc1"/>
-            </p:treeNode>
-            <p:treeNode type="excel" icon="pi pi-file-excel">
-                <h:outputText value="excel1"/>
-            </p:treeNode>
-            <p:treeNode type="travel" icon="pi pi-file-pdf">
-                <h:outputText value="travel1"/>
-            </p:treeNode>
-            <p:treeNode type="picture" icon="pi pi-image">
-                <h:outputText value="img1"/>
-            </p:treeNode>
-            <p:treeNode type="video" icon="pi pi-video">
-                <h:outputText value="video1"/>
-            </p:treeNode>
-        </p:tree>
-
-        <p:contextMenu for="docs">
-            <p:menuitem value="View" update="messages" 
-                        icon="pi pi-search"/>
-            <p:menuitem value="Download" update="docs" 
-                        icon="pi pi-download"/>
-        </p:contextMenu>
-    </h:form>
-</div>
             </p:fieldset>
 
         </h:form>
