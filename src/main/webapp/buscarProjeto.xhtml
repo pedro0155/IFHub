@@ -2,64 +2,89 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+      xmlns:p="primefaces"
+      xmlns:f="jakarta.faces.core">
     <h:head>
         <title>IFHub Página Principal</title>
         <h:outputStylesheet name="estilos.css" library="css"/>
     </h:head>
     <h:body>
         <h:form>
-                            <h:panelGroup>
-                    <div class="ui-g cabeca">
+            <h:panelGroup>
+                <div class="ui-g cabeca">
 
 
                         <div class="ui-g-12 ui-lg-1">
-                            <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center" />
+                            <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center"  onclick="PF('meuMenu').show(event); return false;"/>
 
-                            <p:overlayPanel for="menu" style="width:350px">
-                                <div>
-                                    <p:fieldset>
-                                        <p:commandLink value="Início" action="paginaPrincipal" update="@form"/>
-                                    </p:fieldset>
-                                    <p:fieldset>
-                                        <p:commandLink value="Area do Aluno" action="index"/>
-                                    </p:fieldset>
-                                    <p:fieldset>
-                                        <p:commandLink value="Projetos" action="null"/>
-                                    </p:fieldset>
-                                    <p:fieldset>
-                                        <p:commandLink value="Sobre nós" action="descricaoProjeto"/>
-                                    </p:fieldset>
-                                </div>
-
-                            </p:overlayPanel>
+                            <p:contextMenu widgetVar="meuMenu" for="menu">
+                                <p:menuitem value="Início" action="paginaPrincipal"/>
+                                <p:menuitem value="Area do Aluno" action="areaAluno"/>
+                                <p:menuitem value="Projetos" action="buscarProjeto"/>
+                                <p:menuitem value="Sobre nós" action="sobreNos"/>
+                            </p:contextMenu>
                         </div>
-                        <div class="ui-g-12 ui-lg-9">
-                            <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
-                        </div>
-
-
-
-                        <div class="ui-g-12 ui-lg-2">
-                            <p:commandButton value="Entrar" class="w-50 mr-2 center" update="@form" action="index"/>
-                            <p:commandButton action="#{ctl.init()}" update="@form" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
-                        </div>
-
+                    <div class="ui-g-12 ui-lg-9">
+                        <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
                     </div>
-                </h:panelGroup> <!-- Cabeçalho -->
+
+
+
+                    <div class="ui-g-12 ui-lg-2">
+                        <p:commandButton value="Entrar" class="w-50 mr-2 center" update="@form" action="index"/>
+                        <p:commandButton action="#{ctl.init()}" update="@form" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
+                    </div>
+
+                </div>
+            </h:panelGroup> <!-- Cabeçalho -->
             <p:fieldset class="borda">
 
 
 
                 <h:panelGroup>
-                    <div class="h-20">
-                        <div class="ui-g ui-lg-8 center mt-5 borda">
-                            <h:outputText value="IFHub é um repositório digital que organiza e compartilha projetos de pesquisa e extensão do IFMT - Campus Rondonópolis." class="bold125 t-center w-full escrita"/>
-
-                            <h:outputText  value="Facilita o acesso, colaboração e busca por artefatos, garantindo integridade dos dados. "  class="bold125 t-center w-full mt-2 escrita"/>
-
-                            <h:outputText  value="A plataforma melhora a produtividade e padroniza processos, contribuindo para o sucesso dos projetos."  class="bold125 t-center w-full mt-2 escrita"/>
-                        </div>
+                    <div class="h-20 ui-g">
+                        <p:fieldset class="borda center w-50">
+                            <div class="w-full ">
+                                <p:outputLabel value="Filtrar por:" class="bold w-full"/>
+                            </div>
+                            
+                            <div class="ui-g ui-lg-12">
+                            <p:commandButton value="Informática" class="botao"/>
+                            <p:commandButton value="Ciências" class="botao ml-2"/>
+                            <p:commandButton value="Biologia" class="botao ml-2"/>
+                            <p:commandButton value="Quimica" class="botao ml-2"/>
+                            </div>
+                            <div class="ui-g ui-lg-12">
+                                <p:commandLink value="A" class="center"/>
+                                <p:commandLink value="B" class="center"/>
+                                <p:commandLink value="C" class="center"/>
+                                <p:commandLink value="D" class="center"/>
+                                <p:commandLink value="E" class="center"/>
+                                <p:commandLink value="F" class="center"/>
+                                <p:commandLink value="G" class="center"/>
+                                <p:commandLink value="H" class="center"/>
+                                <p:commandLink value="I" class="center"/>
+                                <p:commandLink value="J" class="center"/>
+                                <p:commandLink value="K" class="center"/>
+                                <p:commandLink value="L" class="center"/>
+                                <p:commandLink value="M" class="center"/>
+                                <p:commandLink value="N" class="center"/>
+                                <p:commandLink value="O" class="center"/>
+                                <p:commandLink value="P" class="center"/>
+                                <p:commandLink value="Q" class="center"/>
+                                <p:commandLink value="R" class="center"/>
+                                <p:commandLink value="S" class="center"/>
+                                <p:commandLink value="T" class="center"/>
+                                <p:commandLink value="U" class="center"/>
+                                <p:commandLink value="V" class="center"/>
+                                <p:commandLink value="X" class="center"/>
+                                <p:commandLink value="K" class="center"/>
+                                <p:commandLink value="W" class="center"/>
+                                <p:commandLink value="Y" class="center"/>
+                                <p:commandLink value="Z" class="center"/>
+                                
+                            </div>
+                        </p:fieldset>
                     </div >
                 </h:panelGroup> <!-- descrição -->
 
@@ -68,43 +93,56 @@
                     <div class="ui-g-12 ui-lg-6 center">
                         <span class="ui-input-icon-left w-full">
                             <i class="pi pi-search" />
-                            <p:inputText placeholder="Search" class="w-full" />
+                            <p:inputText placeholder="Procurar" class="w-90" />
+                            <p:commandButton icon="pi pi-send" action="null" type="button"/>
                         </span>
+                        
                     </div>
+                    
                 </div>
 
             </p:fieldset>
-            
-            <p:dataScroller value="#{ctl.projetos}" var="projeto" rows="4" chunkSize="4" lazy="false" mode="inline">
-                <p:panelGrid columns="4">
-                    <p:panel>
-                        <div class="product-item">
-                            <div class="product-item-content">
+            <p:fieldset class="borda">
+                <div class="ui-g">
+                    <p:dataView value="#{ctl.projetos}" var="projeto" rows="8" paginator="true"
+            paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+            layout="grid"
+                                >
+                        
+                        <p:dataViewGridItem columns="4" >
+                        <p:panel >
+                            <div class="product-item">
+                                <div class="product-item-content">
 
                                     <div class="mb-3 t-center">
-                                        <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
+                                        <p:graphicImage value="resources/img/projetos/#{projeto.id}.jpg" styleClass="product-image"/>   
                                     </div>
                                     <div>
-                                        <p:tag value="#{dataset.categoria}" class="rounded-button mt-2"/>
+                                        <p:tag value="#{projeto.categoria}" class="rounded-button mt-2"/>
 
                                     </div>
                                     <div class="mt-2">
-
-                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
-                                        <br/>
-                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2"/>
+                                        <div class="card-tema">
+                                        <p:outputLabel value="#{projeto.nomeProjeto}" class="bold"/>
+                                        </div>
+                                        <div class="justificado w-full mt-2 card-descricao">
+                                        <p:outputLabel value="#{projeto.descricaoProjeto}" class="mt-2"/>
+                                        </div>
                                     </div>
                                     <div class="t-center mt-2">
-                                        <p:commandButton class="center" value="Visualizar" update="@form"/>
-                                        <p:commandButton class="center ml-2" value="Favoritar" update="@form"/>
+                                          <p:commandButton value="Visualizar" ajax="false" class="botao" action="#{ctl.btVisualizarProjeto}">
+                                        <f:setPropertyActionListener target="#{ctl.mostrarProjeto}" value="#{projeto}" />
+                                    </p:commandButton>
+                                        <p:commandButton class="center botao ml-2" value="Favoritar" update="@form"/>
                                     </div>
 
+                                </div>
                             </div>
-                        </div>
-                    </p:panel>
-                </p:panelGrid>
-            </p:dataScroller>
-
+                        </p:panel>
+                        </p:dataViewGridItem>
+                    </p:dataView>
+                    </div>
+            </p:fieldset>
 
         </h:form>
     </h:body>

@@ -2,42 +2,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+      xmlns:p="primefaces"
+      xmlns:f="jakarta.faces.core">
     <h:head>
         <title>IFHub Página Principal</title>
         <h:outputStylesheet name="estilos.css" library="css"/>
     </h:head>
     <h:body>
         <h:form>
-                  <h:panelGroup>
-                    <div class="ui-g cabeca">
+            <h:panelGroup>
+                <div class="ui-g cabeca">
 
 
-                        <div class="ui-g-12 ui-lg-1">
-                            <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center"  onclick="PF('meuMenu').show(event); return false;"/>
+                    <div class="ui-g-12 ui-lg-1">
+                        <p:commandButton id="menu" icon="pi pi-align-justify" type="button" class="icon-button center"  onclick="PF('meuMenu').show(event); return false;"/>
 
-                            <p:contextMenu widgetVar="meuMenu" for="menu">
-                                <p:menuitem value="Início" action="paginaPrincipal"/>
-                                <p:menuitem value="Area do Aluno" action="index"/>
-                                <p:menuitem value="Projetos" action="buscarProjeto"/>
-                                <p:menuitem value="Sobre nós" action="descricaoProjeto"/>
-                            </p:contextMenu>
-                        </div>
-                        <div class="ui-g-12 ui-lg-9">
-                            <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
-                        </div>
-
-
-
-                        <div class="ui-g-12 ui-lg-2">
-                            <p:commandButton value="Entrar" class="w-50 mr-2 center" update="@form" action="index"/>
-                            <p:commandButton action="#{ctl.init()}" update="@form" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
-                        </div>
-
+                        <p:contextMenu widgetVar="meuMenu" for="menu">
+                            <p:menuitem value="Início" action="paginaPrincipal"/>
+                            <p:menuitem value="Area do Aluno" action="index"/>
+                            <p:menuitem value="Projetos" action="buscarProjeto"/>
+                            <p:menuitem value="Sobre nós" action="sobreNos"/>
+                        </p:contextMenu>
                     </div>
-                </h:panelGroup> <!-- Cabeçalho -->
+                    <div class="ui-g-12 ui-lg-9">
+                        <p:graphicImage value="/resources/img/ifhub.png" alt="logo IFMT" class="w-10 "/>
+                    </div>
+
+
+
+                    <div class="ui-g-12 ui-lg-2">
+                        <p:commandButton value="Entrar" class="w-50 mr-2 center" update="@form" action="index"/>
+                        <p:commandButton action="#{ctl.init()}" update="@form" icon="pi pi-user" styleClass="rounded-button ui-button-info ml-2 " />
+                    </div>
+
+                </div>
+            </h:panelGroup> <!-- Cabeçalho -->
             <p:fieldset class="borda">
-          
+
 
 
                 <h:panelGroup>
@@ -70,25 +71,28 @@
                         <div class="product-item">
                             <div class="product-item-content">
 
-                                    <div class="mb-3 t-center">
-                                        <p:graphicImage value="resources\img\modelo.png" styleClass="product-image"/>   
-                                    </div>
-                                    <div>
-                                        <p:tag value="#{dataset.categoria}" class="rounded-button botao"/>
+                                <div class="mb-3 t-center">
+                                    <p:graphicImage value="/resources/img/projetos/#{dataset.id}.jpg"
+                                                    styleClass="product-image" /> 
+                                </div>
+                                <div>
+                                    <p:tag value="#{dataset.categoria}" class="rounded-button botao"/>
 
+                                </div>
+                                <div class="mt-2 w-75 center">
+                                    <div class="card-tema">
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
                                     </div>
-                                    <div class="mt-2 w-75 center">
-                                        <div class="w-full center">
-                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold125 t-center"/>
-                                        </div>
-                                        <div class="justificado w-full mt-2">
-                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2 justificado"/>
-                                        </div>
+                                    <div class="justificado w-full mt-2 card-descricao">
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2"/>
                                     </div>
-                                    <div class="t-center mt-2">
-                                        <p:commandButton class="center botao" value="Visualizar" update="@form"/>
-                                        <p:commandButton class="center botao ml-2" value="Favoritar" update="@form"/>
-                                    </div>
+                                </div>
+                                <div class="t-center mt-2">
+                                    <p:commandButton value="Visualizar" ajax="false" class="botao" action="#{ctl.btVisualizarProjeto}">
+                                        <f:setPropertyActionListener target="#{ctl.mostrarProjeto}" value="#{dataset}" />
+                                    </p:commandButton>
+                                    <p:commandButton class="center botao ml-2" value="Favoritar" update="@form"/>
+                                </div>
 
                             </div>
                         </div>
@@ -98,31 +102,33 @@
             </p:fieldset>
             <p:fieldset class="borda">
                 <p:outputLabel value="Projetos" class="bold"/>
-              <div class="card">
+                <div class="card">
                     <p:carousel value="#{ctl.projetos}" var="dataset" numVisible="4" numScroll="4">
                         <div class="product-item">
                             <div class="product-item-content">
 
-                                    <div class="mb-3 t-center">
-                                        <p:graphicImage value="/resources/img/projetos/#{dataset.id}.jpg"
-                styleClass="product-image" /> 
-                                    </div>
-                                    <div>
-                                        <p:tag value="#{dataset.categoria}" class="rounded-button botao"/>
+                                <div class="mb-3 t-center">
+                                    <p:graphicImage value="/resources/img/projetos/#{dataset.id}.jpg"
+                                                    styleClass="product-image" /> 
+                                </div>
+                                <div>
+                                    <p:tag value="#{dataset.categoria}" class="rounded-button botao"/>
 
+                                </div>
+                                <div class="mt-2 w-75 center">
+                                    <div class="card-tema">
+                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold"/>
                                     </div>
-                                    <div class="mt-2 w-75 center">
-                                        <div class="w-full center">
-                                        <p:outputLabel value="#{dataset.nomeProjeto}" class="bold125 t-center"/>
-                                        </div>
-                                        <div class="justificado w-full mt-2">
-                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2 justificado"/>
-                                        </div>
+                                    <div class="justificado w-full mt-2 card-descricao">
+                                        <p:outputLabel value="#{dataset.descricaoProjeto}" class="mt-2"/>
                                     </div>
-                                    <div class="t-center mt-2">
-                                        <p:commandButton class="center botao" value="Visualizar" update="@form"/>
-                                        <p:commandButton class="center botao ml-2" value="Favoritar" update="@form"/>
-                                    </div>
+                                </div>
+                                <div class="t-center mt-2">
+                                    <p:commandButton value="Visualizar" ajax="false" class="botao" action="#{ctl.btVisualizarProjeto}">
+                                        <f:setPropertyActionListener target="#{ctl.mostrarProjeto}" value="#{dataset}" />
+                                    </p:commandButton>
+                                    <p:commandButton class="center botao ml-2" value="Favoritar" update="@form"/>
+                                </div>
 
                             </div>
                         </div>
